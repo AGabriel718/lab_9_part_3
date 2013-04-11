@@ -1,9 +1,11 @@
+int x,y;
 void setup() {
   size(500, 500);
   background(255, 255, 255);
 }
 
 void draw() {
+  drawFace(x, y);
   
 }
  void drawFace(int x, int y) {
@@ -26,6 +28,19 @@ void draw() {
   ellipse(x, y + 40, 70, 20);
 }
 
-void mouseClicked()  {
-  drawFace(mouseX, mouseY);
+void keyPressed()  {
+  if (keyCode == UP) {
+  y = y - 5;
+  }  
+  if (keyCode == DOWN) {
+  y = y + 5;
+  }
+  
+  if (keyCode == LEFT) {
+  x = x - 5;
+  }
+  if (keyCode == RIGHT) {
+  x = x + 5;
+  }
 }
+
